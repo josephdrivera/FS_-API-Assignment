@@ -1,4 +1,5 @@
 const express = require('express');
+require('dotenv').config();
 const randomJokeRouter = express.Router();
 const { randomJokeService, randomJokeServiceByid } = require('../Services/randomJokeService');
 const app = express();
