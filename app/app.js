@@ -5,8 +5,8 @@ const boredRouter = require('../router/boredRouter');
 const app = express();
 
 // localhost:3001/bored
-app.get('/', (req, res) => {
-    res.status(200).json({ message: 'bored Server is running  ' });
+app.get('/', (req, res, next) => {
+    res.status(200).json({ message: 'Bored Server is running' });
 });
 
 //routes middleware
@@ -20,8 +20,7 @@ app.use((req, res, next) => {
 });
 
 app.use((error, req, res, next) => {
-    res.status(error.status || 500);
-    res.json({
+    res.status(error.status || 500).json({
         error: {
             message: error.message,
             status: error.status,
