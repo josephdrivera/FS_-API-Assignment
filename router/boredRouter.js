@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 });
 
 
-app.get("activity/:type", (req, res) => {
+app.get("/:type", (req, res) => {
     const type = req.params.type;
     boredServiceByType(type)
         .then(result => res.status(200).json(result))
