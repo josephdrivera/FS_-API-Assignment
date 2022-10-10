@@ -1,16 +1,16 @@
 const express = require('express');
-const boredRouter = require('../router/boredRouter');
+const randomJokeRouter = require('../router/randomJokeRouter');
 
 
 const app = express();
 
-// localhost:3001/bored
+// localhost:3001/randomJoke
 app.get('/', (req, res, next) => {
-    res.status(200).json({ message: 'Bored Server is running' });
+    res.status(200).json({ message: 'Random Joke Server is running' });
 });
 
 //routes middleware
-app.use('/activity', boredRouter);
+app.use('/random_joke', randomJokeRouter);
 
 // add middleware
 app.use((req, res, next) => {
